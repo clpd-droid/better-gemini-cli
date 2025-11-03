@@ -71,6 +71,13 @@ export enum ToolErrorType {
 
   // WebSearch-specific Errors
   WEB_SEARCH_FAILED = 'web_search_failed',
+
+  // HuggingFace Image Generation Errors
+  HF_IMAGE_GEN_NO_API_KEY = 'hf_image_gen_no_api_key',
+  HF_IMAGE_GEN_API_ERROR = 'hf_image_gen_api_error',
+  HF_IMAGE_GEN_SAVE_ERROR = 'hf_image_gen_save_error',
+  HF_IMAGE_GEN_CANCELLED = 'hf_image_gen_cancelled',
+  HF_IMAGE_GEN_EXECUTION_ERROR = 'hf_image_gen_execution_error',
 }
 
 /**
