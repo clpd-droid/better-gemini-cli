@@ -97,6 +97,8 @@ npm install -g @google/gemini-cli@nightly
 
 ### Automation & Integration
 
+- **MCP Marketplace**: Browse and install from 12+ verified MCP servers with one
+  command - [Get Started](./MARKETPLACE.md)
 - Automate operational tasks like querying pull requests or handling complex
   rebases
 - Use MCP servers to connect new capabilities, including
@@ -318,8 +320,25 @@ gemini
 
 ### Using MCP Servers
 
-Configure MCP servers in `~/.gemini/settings.json` to extend Gemini CLI with
-custom tools:
+#### Quick Install from Marketplace
+
+Browse and install MCP servers with one command:
+
+```bash
+# Browse available servers
+gemini marketplace browse
+
+# Install a server
+gemini marketplace install github
+gemini marketplace install postgres
+gemini marketplace install slack
+```
+
+See the [MCP Marketplace Guide](./MARKETPLACE.md) for the full catalog.
+
+#### Manual Configuration
+
+You can also manually configure MCP servers in `~/.gemini/settings.json`:
 
 ```text
 > @github List my open pull requests
@@ -327,8 +346,8 @@ custom tools:
 > @database Run a query to find inactive users
 ```
 
-See the [MCP Server Integration guide](./docs/tools/mcp-server.md) for setup
-instructions.
+See the [MCP Server Integration guide](./docs/tools/mcp-server.md) for manual
+setup instructions.
 
 ## 🤝 Contributing
 

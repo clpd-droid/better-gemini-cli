@@ -11,6 +11,7 @@ import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
 import process from 'node:process';
 import { mcpCommand } from '../commands/mcp.js';
+import { marketplaceCommand } from '../commands/marketplace.js';
 import type {
   FileFilteringOptions,
   MCPServerConfig,
@@ -241,7 +242,9 @@ export async function parseArguments(settings: Settings): Promise<CliArgs> {
         }),
     )
     // Register MCP subcommands
-    .command(mcpCommand);
+    .command(mcpCommand)
+    // Register marketplace command
+    .command(marketplaceCommand);
 
   if (settings?.experimental?.extensionManagement ?? true) {
     yargsInstance.command(extensionsCommand);
@@ -260,13 +263,15 @@ export async function parseArguments(settings: Settings): Promise<CliArgs> {
 
   // If yargs handled --help/--version it will have exited; nothing to do here.
 
-  // Handle case where MCP subcommands are executed - they should exit the process
+  // Handle case where MCP/marketplace/extensions subcommands are executed - they should exit the process
   // and not return to main CLI logic
   if (
     result._.length > 0 &&
-    (result._[0] === 'mcp' || result._[0] === 'extensions')
+    (result._[0] === 'mcp' ||
+      result._[0] === 'extensions' ||
+      result._[0] === 'marketplace')
   ) {
-    // MCP commands handle their own execution and process exit
+    // These commands handle their own execution and process exit
     process.exit(0);
   }
 

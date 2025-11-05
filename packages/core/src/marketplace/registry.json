@@ -1,0 +1,315 @@
+{
+  "version": "1.0.0",
+  "servers": [
+    {
+      "id": "filesystem",
+      "name": "Filesystem MCP Server",
+      "description": "Secure file system operations with configurable access controls",
+      "author": "modelcontextprotocol",
+      "category": "filesystem",
+      "tags": ["files", "filesystem", "read", "write"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "{path}"],
+        "requiredArgs": ["path"]
+      },
+      "tools": [
+        "read_file",
+        "read_multiple_files",
+        "write_file",
+        "edit_file",
+        "create_directory",
+        "list_directory",
+        "move_file",
+        "search_files",
+        "get_file_info"
+      ],
+      "verified": true,
+      "downloads": 15000,
+      "rating": 4.8
+    },
+    {
+      "id": "github",
+      "name": "GitHub MCP Server",
+      "description": "Complete GitHub API integration for repositories, issues, PRs, and more",
+      "author": "modelcontextprotocol",
+      "category": "development",
+      "tags": ["github", "git", "version-control", "api"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"],
+        "envVars": ["GITHUB_PERSONAL_ACCESS_TOKEN"]
+      },
+      "tools": [
+        "create_or_update_file",
+        "search_repositories",
+        "create_repository",
+        "get_file_contents",
+        "push_files",
+        "create_issue",
+        "create_pull_request",
+        "fork_repository",
+        "create_branch"
+      ],
+      "verified": true,
+      "downloads": 12000,
+      "rating": 4.7
+    },
+    {
+      "id": "postgres",
+      "name": "PostgreSQL MCP Server",
+      "description": "Query and manage PostgreSQL databases with schema inspection",
+      "author": "modelcontextprotocol",
+      "category": "database",
+      "tags": ["database", "postgres", "sql", "query"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-postgres",
+          "{connectionString}"
+        ],
+        "requiredArgs": ["connectionString"]
+      },
+      "tools": ["query", "list_tables", "describe_table", "get_schema"],
+      "verified": true,
+      "downloads": 8500,
+      "rating": 4.6
+    },
+    {
+      "id": "slack",
+      "name": "Slack MCP Server",
+      "description": "Send messages, manage channels, and interact with Slack workspaces",
+      "author": "modelcontextprotocol",
+      "category": "communication",
+      "tags": ["slack", "messaging", "communication", "team"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-slack"],
+        "envVars": ["SLACK_BOT_TOKEN", "SLACK_TEAM_ID"]
+      },
+      "tools": [
+        "post_message",
+        "list_channels",
+        "get_channel_history",
+        "add_reaction",
+        "get_users"
+      ],
+      "verified": true,
+      "downloads": 9200,
+      "rating": 4.5
+    },
+    {
+      "id": "puppeteer",
+      "name": "Puppeteer MCP Server",
+      "description": "Browser automation and web scraping with Puppeteer",
+      "author": "modelcontextprotocol",
+      "category": "automation",
+      "tags": ["browser", "automation", "scraping", "web"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+      },
+      "tools": [
+        "puppeteer_navigate",
+        "puppeteer_screenshot",
+        "puppeteer_click",
+        "puppeteer_fill",
+        "puppeteer_select",
+        "puppeteer_hover",
+        "puppeteer_evaluate"
+      ],
+      "verified": true,
+      "downloads": 7800,
+      "rating": 4.7
+    },
+    {
+      "id": "brave-search",
+      "name": "Brave Search MCP Server",
+      "description": "Web search using Brave Search API",
+      "author": "modelcontextprotocol",
+      "category": "search",
+      "tags": ["search", "web", "brave", "api"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+        "envVars": ["BRAVE_API_KEY"]
+      },
+      "tools": ["brave_web_search", "brave_local_search"],
+      "verified": true,
+      "downloads": 6500,
+      "rating": 4.4
+    },
+    {
+      "id": "google-maps",
+      "name": "Google Maps MCP Server",
+      "description": "Location services, geocoding, and directions via Google Maps API",
+      "author": "modelcontextprotocol",
+      "category": "location",
+      "tags": ["maps", "location", "geocoding", "directions"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-google-maps"],
+        "envVars": ["GOOGLE_MAPS_API_KEY"]
+      },
+      "tools": [
+        "geocode",
+        "reverse_geocode",
+        "search_places",
+        "get_directions",
+        "get_distance_matrix"
+      ],
+      "verified": true,
+      "downloads": 5200,
+      "rating": 4.6
+    },
+    {
+      "id": "memory",
+      "name": "Memory MCP Server",
+      "description": "Persistent key-value storage for maintaining context across sessions",
+      "author": "modelcontextprotocol",
+      "category": "storage",
+      "tags": ["memory", "storage", "persistence", "context"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-memory"]
+      },
+      "tools": [
+        "store_memory",
+        "retrieve_memory",
+        "delete_memory",
+        "list_memories"
+      ],
+      "verified": true,
+      "downloads": 4800,
+      "rating": 4.5
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite MCP Server",
+      "description": "Query and manage SQLite databases",
+      "author": "modelcontextprotocol",
+      "category": "database",
+      "tags": ["database", "sqlite", "sql", "query"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-sqlite", "{databasePath}"],
+        "requiredArgs": ["databasePath"]
+      },
+      "tools": ["query", "list_tables", "describe_table", "get_schema"],
+      "verified": true,
+      "downloads": 6200,
+      "rating": 4.7
+    },
+    {
+      "id": "fetch",
+      "name": "Fetch MCP Server",
+      "description": "Make HTTP requests and fetch web content",
+      "author": "modelcontextprotocol",
+      "category": "web",
+      "tags": ["http", "fetch", "web", "api"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-fetch"]
+      },
+      "tools": ["fetch"],
+      "verified": true,
+      "downloads": 8900,
+      "rating": 4.6
+    },
+    {
+      "id": "aws-kb-retrieval",
+      "name": "AWS Knowledge Base Retrieval",
+      "description": "Query AWS Bedrock Knowledge Bases for RAG applications",
+      "author": "modelcontextprotocol",
+      "category": "ai",
+      "tags": ["aws", "bedrock", "knowledge-base", "rag"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/aws-kb-retrieval",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-aws-kb-retrieval"],
+        "envVars": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_REGION"]
+      },
+      "tools": ["retrieve_from_knowledge_base"],
+      "verified": true,
+      "downloads": 3200,
+      "rating": 4.3
+    },
+    {
+      "id": "sequential-thinking",
+      "name": "Sequential Thinking MCP Server",
+      "description": "Enable structured step-by-step reasoning for complex problems",
+      "author": "modelcontextprotocol",
+      "category": "reasoning",
+      "tags": ["thinking", "reasoning", "problem-solving", "analysis"],
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "documentation": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+      "transport": "stdio",
+      "installation": {
+        "type": "npx",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+      },
+      "tools": ["sequentialthinking"],
+      "verified": true,
+      "downloads": 4100,
+      "rating": 4.8
+    }
+  ],
+  "categories": [
+    { "id": "filesystem", "name": "File System", "icon": "📁" },
+    { "id": "development", "name": "Development", "icon": "💻" },
+    { "id": "database", "name": "Database", "icon": "🗄️" },
+    { "id": "communication", "name": "Communication", "icon": "💬" },
+    { "id": "automation", "name": "Automation", "icon": "🤖" },
+    { "id": "search", "name": "Search", "icon": "🔍" },
+    { "id": "location", "name": "Location", "icon": "📍" },
+    { "id": "storage", "name": "Storage", "icon": "💾" },
+    { "id": "web", "name": "Web", "icon": "🌐" },
+    { "id": "ai", "name": "AI & ML", "icon": "🧠" },
+    { "id": "reasoning", "name": "Reasoning", "icon": "🤔" }
+  ]
+}

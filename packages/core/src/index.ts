@@ -99,6 +99,10 @@ export * from './tools/tool-names.js';
 // Export prompt logic
 export * from './prompts/mcp-prompts.js';
 
+// Export marketplace
+export * from './marketplace/types.js';
+export * from './marketplace/marketplace-manager.js';
+
 // Export specific tool logic
 export * from './tools/read-file.js';
 export * from './tools/ls.js';
